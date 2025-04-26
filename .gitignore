@@ -1,0 +1,34 @@
+# Compiled object files
+*.o
+
+# Preprocessed source files
+*.i
+
+# Assembly output files
+*.s
+
+# Executable files
+*.out
+a.out
+*.exe
+
+# Backup files
+*~
+
+# Editor specific
+.vscode/
+.idea/
+*.swp
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+
+# Build folders
+build/
+out/
+bin/
+
+# Misc
+*.log
