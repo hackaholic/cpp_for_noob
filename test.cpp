@@ -1,33 +1,26 @@
 #include <iostream>
-
+#include <functional>
 using namespace std;
 
-namespace Nokia {
-    void cout() {
-        std::cout << "Nokia Connecting People ..." << std::endl;
-    }
-};
 
-class Dog {
-public:
-    string breed;
 
-public:
-    Dog() {breed = "Indie";}
-    //  Member Initializer Lists
-    Dog(string s) :breed(s) {}; 
-    // above syntax It’s more efficient and idiomatic C++, especially when initializing complex objects.
+int main() {
 
-    ~Dog() {
-        std::cout << "Dog of breed [" << breed <<"] is destroyed." << std::endl;
-    }
+    auto power_lambda = [](const string& s) -> std::function<int(int)> {
+        if (s == "square")
+        {
+            return [](int x) { return x*x;};
+        }
 
-};
+        if(s == "cube") {
+            return [](int x) {return x*x*x;};
+        }
+    };
 
-int main(int argc, char *argv[]) {
-    Dog d1;
-    Dog d2("Husky");
+    auto square = power_lambda("square");
+    auto cube = power_lambda("cube");
 
-    std::cout << d1.breed << std::endl << d2.breed << std::endl;
-    return 0;
+    std::cout << "square of 10 " <<  square(10) << std::endl;
+    std::cout << "cube of 10 " <<  cube(10) << std::endl;
+
 }
