@@ -18,7 +18,7 @@ public:
 
 
 /*
-f you don't use override,
+if you don't use override,
 C++ assumes you are just writing a new function in child — it doesn't even check if you intended to override or not.
 
 If you accidentally mismatch signature, it will not give any error.
